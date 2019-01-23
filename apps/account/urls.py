@@ -7,9 +7,8 @@ from apps.account import views
 
 urlpatterns = [
     url('login/', views.login_view, name='login'),
-    url('register/', views.login_view, name='register'),
-    url('logout/', views.login_view, name='logout'),
-    url('logout/', views.login_view, name='logout'),
+    url('register/', views.register_view, name='register'),
+    url('logout/', views.logout_view, name='logout'),
     url('active/', views.active_account, name='active'),
     url('update/', views.update_view, name='update')
 ]

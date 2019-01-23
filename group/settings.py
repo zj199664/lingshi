@@ -61,6 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.account.context_processors.shop_count',
             ],
         },
     },
@@ -119,6 +120,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'apps/account/static'),
 )
 # 配置访问多媒体的路径
 MEDIA_URL = '/media/'
@@ -132,13 +134,13 @@ AUTH_USER_MODEL = 'index.User'
 
 # ==============邮件配置=============
 # 发送邮件的服务器地址
-EMAIL_HOST = 'smtp.qq.com'
+EMAIL_HOST = 'smtp.163.com'
 # 发送邮件端口
-EMAIL_PORT = 587
+EMAIL_PORT = 25
 # 发送邮件默认的名称
-EMAIL_HOST_USER = ''
+EMAIL_HOST_USER = '13821671776@163.com'
 # 授权码
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'qwe123'
 # 是否启用tls安全协议
 EMAIL_USE_TLS = True
 

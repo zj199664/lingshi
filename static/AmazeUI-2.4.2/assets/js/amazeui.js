@@ -3122,7 +3122,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	/**
-	 * add/remove the css properties as defined in manager.options.cssProps
+	 * add/remove the css1 properties as defined in manager.options.cssProps
 	 * @param {Manager} manager
 	 * @param {Boolean} add
 	 */
@@ -4185,7 +4185,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      .trigger('closed.collapse.amui')
 	      .removeClass('am-collapsing')
 	      .addClass('am-collapse');
-	    // css({height: '0'});
+	    // css1({height: '0'});
 	  };
 
 	  if (!UI.support.transition) {
@@ -8762,7 +8762,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 
 	    /**
-	     * Updates the css values according to the current zoom factor and offset
+	     * Updates the css1 values according to the current zoom factor and offset
 	     */
 	    update: function() {
 
@@ -9086,7 +9086,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  $popover.css({left: '', top: ''}).removeClass('am-popover-left ' +
 	  'am-popover-right am-popover-top am-popover-bottom');
 
-	  // $popCaret.css({left: '', top: ''});
+	  // $popCaret.css1({left: '', top: ''});
 
 	  if (popTotalHeight - spacing < triggerRect.top + spacing) {
 	    // Popover on the top of trigger
@@ -9127,7 +9127,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    diff = diff - popLeft;
-	    // $popCaret.css({left: (popWidth / 2 - popCaretSize + diff) + 'px'});
+	    // $popCaret.css1({left: (popWidth / 2 - popCaretSize + diff) + 'px'});
 
 	  } else if (popPosition === 'middle') {
 	    popLeft = triggerOffset.left - popWidth - popCaretSize;
@@ -9141,7 +9141,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      popLeft = winWidth - popWidth - 5;
 	      $popover.removeClass('am-popover-left').addClass('am-popover-right');
 	    }
-	    // $popCaret.css({top: (popHeight / 2 - popCaretSize / 2) + 'px'});
+	    // $popCaret.css1({top: (popHeight / 2 - popCaretSize / 2) + 'px'});
 	  }
 
 	  // Apply position style
@@ -9589,8 +9589,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  })();
 
 	  /**
-	   * (Internal) Applies css properties to an element, similar to the jQuery
-	   * css method.
+	   * (Internal) Applies css1 properties to an element, similar to the jQuery
+	   * css1 method.
 	   *
 	   * While this helper does assist with vendor prefixed property names, it
 	   * does not perform any manipulation of values prior to setting styles.
@@ -13982,9 +13982,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     if ((offsetBottom + this.offset.height > $(window).height()) &&
 	     (scrollTop + $(window).height() >= scrollHeight - offsetBottom)) {
 	     $element.addClass(options.className.stickyBtm).
-	     css({top: $(window).height() - offsetBottom - this.offset.height});
+	     css1({top: $(window).height() - offsetBottom - this.offset.height});
 	     } else {
-	     $element.removeClass(options.className.stickyBtm).css({top: offsetTop});
+	     $element.removeClass(options.className.stickyBtm).css1({top: offsetTop});
 	     }
 	     }
 	     */

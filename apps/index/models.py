@@ -36,8 +36,6 @@ class Banner(models.Model):
 class Category(models.Model):
     cate_id = models.AutoField(primary_key=True, auto_created=True)
     cate_name = models.CharField(max_length=64)
-    is_delete = models.BooleanField(default=False)
-    crete_time = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         db_table = 'category'
@@ -69,7 +67,7 @@ class Shop(models.Model):
 
 class ShopProperty(models.Model):
     property_id = models.AutoField(primary_key=True, auto_created=True)
-    value = models.CharField(max_length=255)
+    shop_value = models.CharField(max_length=255)
     shop_id = models.ForeignKey(Shop, on_delete=models.CASCADE, db_column='shop_id', db_index=True)
     is_delete = models.BooleanField(default=False)
     create_time = models.DateTimeField(auto_now_add=True)

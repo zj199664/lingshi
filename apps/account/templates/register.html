@@ -14,29 +14,26 @@
     <script src="/static/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
     <script src="/static/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
 </head>
-<script>
-    $(function () {
-
-        let URL = "http://127.0.0.1:8000/account/register/";
-        $('#register').click(function () {
-            let email = $('#email').val();
-            let username = $('#username').val();
-            let password = $('#password').val();
-            let passwordRepeat = $('#passwordRepeat').val();
-            let data = {
-                email: email,
-                username: username,
-                password: password,
-                passwordRepeat: passwordRepeat,
-                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
-            };
-            $.post(url = URL, data, function (result) {
-
-            })
-        })
-    })
-
-</script>
+{#<script>#}
+{#    $(function () {#}
+{#        let URL = "http://127.0.0.1:8000/account/register/";#}
+{#        $('#register').click(function () {#}
+{#            let email = $('#email').val();#}
+{#            let username = $('#username').val();#}
+{#            let password = $('#password').val();#}
+{#            let passwordRepeat = $('#passwordRepeat').val();#}
+{#            let data = {#}
+{#                email: email,#}
+{#                username: username,#}
+{#                password: password,#}
+{#                passwordRepeat: passwordRepeat,#}
+{#                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()#}
+{#            };#}
+{#            $.post(url = URL, data, function (result) {#}
+{#            })#}
+{#        })#}
+{#    })#}
+{#</script>#}
 
 
 <body>
@@ -74,7 +71,10 @@
                                 <label for="passwordRepeat"><i class="am-icon-lock"></i></label>
                                 <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="确认密码">
                             </div>
-
+                            <div class="am-cf">
+                                <input type="submit" id="register" name="register" value="注册"
+                                       class="am-btn am-btn-primary am-btn-sm am-fl">
+                            </div>
                         </form>
 
                         <div class="login-links">
@@ -82,46 +82,9 @@
                                 <input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
                             </label>
                         </div>
-                        <div class="am-cf">
-                            <input type="submit" id="register" name="register" value="注册"
-                                   class="am-btn am-btn-primary am-btn-sm am-fl">
-                        </div>
+
 
                     </div>
-
-                    {#                    <div class="am-tab-panel">#}
-                    {#                        <form method="post">#}
-                    {#                            <div class="user-phone">#}
-                    {#                                <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>#}
-                    {#                                <input type="tel" name="" id="phone" placeholder="请输入手机号">#}
-                    {#                            </div>#}
-                    {#                            <div class="verification">#}
-                    {#                                <label for="code"><i class="am-icon-code-fork"></i></label>#}
-                    {#                                <input type="tel" name="" id="code" placeholder="请输入验证码">#}
-                    {#                                <a class="btn" href="javascript:void(0);" onclick="sendMobileCode();"#}
-                    {#                                   id="sendMobileCode">#}
-                    {#                                    <span id="dyMobileButton">获取</span></a>#}
-                    {#                            </div>#}
-                    {#                            <div class="user-pass">#}
-                    {#                                <label for="password"><i class="am-icon-lock"></i></label>#}
-                    {#                                <input type="password" name="" id="password" placeholder="设置密码">#}
-                    {#                            </div>#}
-                    {#                            <div class="user-pass">#}
-                    {#                                <label for="passwordRepeat"><i class="am-icon-lock"></i></label>#}
-                    {#                                <input type="password" name="" id="passwordRepeat" placeholder="确认密码">#}
-                    {#                            </div>#}
-                    {#                        </form>#}
-                    {#                        <div class="login-links">#}
-                    {#                            <label for="reader-me">#}
-                    {#                                <input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》#}
-                    {#                            </label>#}
-                    {#                        </div>#}
-                    {#                        <div class="am-cf">#}
-                    {#                            <input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">#}
-                    {#                        </div>#}
-                    {##}
-                    {#                        <hr>#}
-                    {#                    </div>#}
 
                     <script>
                         $(function () {
