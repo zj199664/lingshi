@@ -12,7 +12,12 @@ class User(AbstractUser):
 
 class Address(models.Model):
     addr_id = models.AutoField(primary_key=True, auto_created=True)
-    detail_addr = models.CharField(max_length=255)
+    receiver = models.CharField(max_length=64)
+    province = models.CharField(max_length=20)
+    city = models.CharField(max_length=20)
+    area = models.CharField(max_length=20)
+    detail_address = models.CharField(max_length=255)
+    phone = models.CharField(max_length=11)
     # 地址表示，1代表默认地址，0代表普通地址
     status = models.BooleanField(default=1)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, db_index=True, db_column='user_id')

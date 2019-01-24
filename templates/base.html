@@ -39,12 +39,12 @@
                         <div class="menu-hd"><a href="{% url 'index' %}" target="_top" class="h">商城首页</a></div>
                     </div>
                     <div class="topMessage my-shangcheng">
-                        <div class="menu-hd MyShangcheng"><a href="#" target="_top"><i
+                        <div class="menu-hd MyShangcheng"><a href="{% url 'update' %}" target="_top"><i
                                 class="am-icon-user am-icon-fw"></i>个人中心</a></div>
                     </div>
                     <div class="topMessage mini-cart">
                         <div class="menu-hd">
-                            <a id="mc-menu-hd" href="#" target="_top">
+                            <a id="mc-menu-hd" href="{% url 'list' %}" target="_top">
                                 <i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span>
                                 <strong id="J_MiniCartNum" class="h">
                                     {% if request.user.is_authenticated %}
@@ -71,8 +71,8 @@
 
                 <div class="search-bar pr">
                     <a name="index_none_header_sysc" href="#"></a>
-                    <form>
-                        <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索"
+                    <form action="{% url 'search' %}" method="get">
+                        <input id="searchInput" name="keywords" type="text" placeholder="搜索"
                                autocomplete="off">
                         <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
                     </form>
@@ -88,7 +88,7 @@
     <div class="long-title"><span class="all-goods">全部分类</span></div>
     <div class="nav-cont">
         <ul>
-            <li class="index"><a href="#">首页</a></li>
+            <li class="index"><a href="{% url 'index' %}">首页</a></li>
             <li class="qc"><a href="#">闪购</a></li>
             <li class="qc"><a href="#">限时抢</a></li>
             <li class="qc"><a href="#">团购</a></li>

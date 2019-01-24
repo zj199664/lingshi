@@ -3,11 +3,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.db import transaction
-from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from itsdangerous import URLSafeSerializer
-from apps.index.models import User
+from apps.index.models import User, Address
 from group import settings
 from django.template import loader
 from django.core.cache import cache
@@ -99,7 +98,40 @@ def logout_view(request):
 @login_required
 @csrf_exempt
 def update_view(request):
-    return
+    if request.method == 'GET':
+        return render(request, 'information.html')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        first_name = request.POST.get('first_name')
+        new_phone = request.POST.get('new_phone')
+        new_email = request.POST.get('new_email')
+        user = request.user
+        user.username = username
+        user.first_name = first_name
+        user.phone = new_phone
+        user.email = new_email
+        user.save()
+        return render(request, 'information.html')
+
+
+@login_required
+@csrf_exempt
+def add_address_views(request):
+    if request.method == 'GET':
+        address_list = Address.objects.filter(user_id=request.user.id)
+        return render(request, 'address.html', {'address_list': address_list})
+    if request.method == 'POST':
+        receiver = request.POST.get('receiver')
+        phone = request.POST.get('phone')
+        province = request.POST.get('province')
+        city = request.POST.get('city')
+        area = request.POST.get('area')
+        detail_address = request.POST.get('detail_address')
+        address = Address(receiver=receiver, phone=phone, province=province, city=city, area=area,
+                          detail_address=detail_address, user_id=request.user)
+        address.save()
+        address_list = Address.objects.filter(user_id=request.user.id)
+        return render(request, 'address.html', {'address_list': address_list})
 
 
 def active_account(request):

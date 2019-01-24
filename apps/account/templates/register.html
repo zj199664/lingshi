@@ -51,7 +51,11 @@
                     <li class="am-active"><a href="">邮箱注册</a></li>
                     {#                    <li><a href="">手机号注册</a></li>#}
                 </ul>
-
+                {% if msg %}
+                    <div class="form-group  w3 w3l">
+                        <div style="color: black" class="help-block with-errors">{{ msg }}</div>
+                    </div>
+                {% endif %}
                 <div class="am-tabs-bd">
                     <div class="am-tab-panel am-active">
                         <form method="post">

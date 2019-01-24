@@ -47,7 +47,11 @@
             <h3 class="title">登录商城</h3>
 
             <div class="clear"></div>
-
+            {% if msg %}
+                <div class="form-group  w3 w3l">
+                    <div style="color: black" class="help-block with-errors">{{ msg }}</div>
+                </div>
+            {% endif %}
             <div class="login-form">
                 <form method="post" action="{% url 'login' %}">
                     {% if next %}

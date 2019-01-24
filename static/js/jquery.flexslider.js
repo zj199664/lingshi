@@ -1256,7 +1256,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // TODO :: make the prefixes more granular
     /*>>prefixes*/
-    // List of property values to set for css1 tests. See ticket #21
+    // List of property values to set for css tests. See ticket #21
     prefixes = ' -webkit- -moz- -o- -ms- '.split(' '),
     /*>>prefixes*/
 
@@ -1492,7 +1492,7 @@ window.Modernizr = (function( window, document, undefined ) {
     }
 
     /**
-     * setCssAll extrapolates all vendor-specific css1 strings.
+     * setCssAll extrapolates all vendor-specific css strings.
      */
     function setCssAll( str1, str2 ) {
         return setCss(prefixes.join(str1 + ';') + ( str2 || '' ));
@@ -1727,7 +1727,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
 
-    // css1-tricks.com/rgba-browser-support/
+    // css-tricks.com/rgba-browser-support/
     tests['rgba'] = function() {
         // Set an rgba() color and check the returned value
 
@@ -1820,7 +1820,7 @@ window.Modernizr = (function( window, document, undefined ) {
     tests['cssgradients'] = function() {
         /**
          * For CSS Gradients syntax, please see:
-         * webkit.org/blog/175/introducing-css1-gradients/
+         * webkit.org/blog/175/introducing-css-gradients/
          * developer.mozilla.org/en/CSS/-moz-linear-gradient
          * developer.mozilla.org/en/CSS/-moz-radial-gradient
          * dev.w3.org/csswg/css3-images/#gradients-

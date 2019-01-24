@@ -3,6 +3,8 @@
 # __time__:2019/1/17 20:30
 from django.conf.urls import url
 
-urlpatterns = [
+from apps.detail import views
 
+urlpatterns = [
+    url('detail/', views.detail, name='detail'),
 ]
