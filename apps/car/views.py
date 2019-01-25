@@ -58,7 +58,6 @@ def list(reqeust):
 #         return JsonResponse(result)
 
 
-
 @csrf_exempt
 def add_car(request):
     # 判断是否是ajax请求
@@ -96,11 +95,34 @@ def add_car(request):
         return redirect('/')
 
 
-def update(request):
-    pass
+@csrf_exempt
+def update_num(request):
+    try:
+        ac = request.POST.get('ac')
+        car_id = request.POST.get('car_id')
+        if ac == '1':
+            count = ShopCar.objects.filter(car_id=car_id, is_delete=0).update(shop_number=F('shop_number') + 1)
+            car = ShopCar.objects.filter(car_id=car_id).first()
+            number = car.shop_number
+            shop_id = car.shop_id.shop_id
+            shop = Shop.objects.filter(shop_id=shop_id).first()
+            price = shop.promote_price
+            sum_price = number * price
+            return JsonResponse({'status': 200, 'msg': 'success', 'sum_price': sum_price})
+        else:
+            count = ShopCar.objects.filter(car_id=car_id, is_delete=0).update(shop_number=F('shop_number') - 1)
+            car = ShopCar.objects.filter(car_id=car_id).first()
+            number = car.shop_number
+            shop_id = car.shop_id.shop_id
+            shop = Shop.objects.filter(shop_id=shop_id).first()
+            price = shop.promote_price
+            sum_price = number * price
+            return JsonResponse({'status': 200, 'msg': 'success', 'sum_price': sum_price})
+    except Exception as e:
+        return JsonResponse({'status': 404, 'msg': 'error'})
 
 
-def detlete(request):
+def delete(request):
     pass
 
 # # 开始事务

@@ -1,3 +1,5 @@
+{% load custom %}
+<script src="/static/js/cars01.js" type="text/javascript"></script>
 <body>
 <section class="cartMain">
     <div class="cartMain_hd">
@@ -54,13 +56,14 @@
                     </li>
                     <li class="list_amount">
                         <div class="amount_box">
-                            <a href="javascript:;" class="reduce reSty">-</a>
-                            <input type="text" value="{{ car.shop_number }}" id="{{ car.car_id }}" name="nums" class="sum">
-                            <a href="javascript:;" class="plus">+</a>
+                            <a href="javascript:;" class="reduce reSty" id="sub" car_id="{{ car.car_id }}">-</a>
+                            <input type="text" max="{{ car.shop.stock }}" value="{{ car.shop_number }}"
+                                   id="{{ car.car_id }}" name="nums" class="sum">
+                            <a href="javascript:;" class="plus" id="add" car_id="{{ car.car_id }}">+</a>
                         </div>
                     </li>
                     <li class="list_sum">
-                        <p class="sum_price">￥{{ car.shop.promote_price }}</p>
+                        <p class="sum_price" id="sum_price">￥{{ car.shop_number|multiply:car.shop.promote_price }}</p>
                     </li>
                     <li class="list_op">
                         <p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>

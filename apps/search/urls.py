@@ -7,5 +7,5 @@ from apps.search import views
 
 urlpatterns = [
     url('search/', views.search, name='search'),
-
+    url('search_cate/', views.search_sub, name='search_sub')
 ]

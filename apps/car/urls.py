@@ -8,5 +8,5 @@ from apps.car import views
 urlpatterns = [
     url('add/', views.add_car, name='add'),
     url('list/', views.list, name='list'),
-
+    url('update/', views.update_num, name='update')
 ]

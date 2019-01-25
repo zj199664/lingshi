@@ -12,8 +12,7 @@
             {% for shop in shops %}
                 <li>
                     <div class="list">
-                        <a href="{% url 'detail' %}?keywords={{ shop.name
-                                }}"><img src="{{ shop.img }}"></a>
+                        <a href="{% url 'detail' %}?sid={{ shop.shop_id }}"><img src="{{ shop.img }}"></a>
                         <p class="title fl">{{ shop.name }}</p>
                         <p class="price fl">
                             <b>¥</b>

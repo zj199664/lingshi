@@ -42,7 +42,7 @@
 
                                                                 <dd>
                                                                     {#                                                                  href="{% url 'search' %}?keyword={{ sub_cate.name }}#}
-                                                                    <a title={{ sub_cate.name }} href="{% url 'search' %}?keywords={{ sub_cate.name }}"><span>{{ sub_cate.name }}</span></a>
+                                                                    <a title={{ sub_cate.name }} href="{% url 'search_sub' %}?keyword={{ sub_cate.sub_cate_id }}"><span>{{ sub_cate.name }}</span></a>
                                                                 </dd>
                                                             {% endfor %}
 
