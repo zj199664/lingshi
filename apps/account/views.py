@@ -1,11 +1,12 @@
 import re
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
 from django.db import transaction
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from itsdangerous import URLSafeSerializer
+
+from account.task import send_active_mail
 from apps.index.models import User, Address
 from group import settings
 from django.template import loader
@@ -147,11 +148,4 @@ def active_account(request):
         return redirect('/')
 
 
-# 发送邮件
-def send_active_mail(subject='', content=None, to=None):
-    send_mail(subject=subject,
-              message='',
-              html_message=content,
-              from_email=settings.EMAIL_HOST_USER,
-              recipient_list=to
-              )
+
